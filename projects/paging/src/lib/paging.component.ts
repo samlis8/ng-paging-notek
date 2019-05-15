@@ -40,7 +40,6 @@ export class PagingComponent implements OnChanges {
     quickJumpNumIsCorrect: boolean = true;
 
     timer: any;
-    isInit: boolean = true;
 
     constructor(private cd: ChangeDetectorRef) { };
 
@@ -57,16 +56,22 @@ export class PagingComponent implements OnChanges {
 
     /** 转换页码 **/
     private gotoPage() {
+        this.emptyList = [];
         this.pageNum = Math.ceil(this.pageTotal / this.pageLimit);
         if(this.pageNum - this.currentPage > 3) {
             if(this.currentPage >= 5 && this.pageNum > this.abbrSymbolSize) {
                 this.emptyList = [1, 'place', this.currentPage - 2, this.currentPage - 1, this.currentPage, this.currentPage + 1, this.currentPage + 2, 'place', this.pageNum];
             }else {
-                (this.emptyList.indexOf('place') > -1 || this.isInit) && this.initPageParams();
+                // (this.emptyList.indexOf('place') > -1 || this.isInit) && this.initPageParams();
+                this.initPageParams();
             }
         }else {
             if(this.currentPage >= 5 && this.pageNum > this.abbrSymbolSize) {
                 this.emptyList = [1, 'place', this.pageNum - 4, this.pageNum - 3, this.pageNum - 2, this.pageNum - 1, this.pageNum];
+            }
+
+            if(this.pageNum < 5) {
+                this.initPageParams();
             }
         } 
 
@@ -134,8 +139,6 @@ export class PagingComponent implements OnChanges {
 
     /** 初始化 **/
     private initPageParams() {
-        this.isInit = false;
-
         // 如果页码小于等于10则全部显示.
         if(this.pageNum <= this.abbrSymbolSize) {
             for(let i=0; i<this.pageNum; i++) this.emptyList.push(i + 1);

@@ -12,4 +12,8 @@ export class AppComponent {
     clickPage(page: number) {
         console.log(page);
     };
+
+    change(t) {
+        this.total = t;
+    };
 }
