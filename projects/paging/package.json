@@ -1,8 +1,29 @@
 {
   "name": "ng-paging-notek",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "angular6+ 分页组件 分页",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "notek",
+    "email": "notek1314@gmail.com"
+  },
+  "license": "ISC",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:notek/ng-paging-notek.git"
+  },
+  "bugs": {
+    "url": "https://github.com/notek/ng-paging-notek/issues"
+  },
+  "homepage": "https://github.com/notek/ng-paging-notek/tree/master/projects/paging",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
-  }
+  },
+  "dependencies": {},
+  "keywords": "ng-paging paging-notek angular6 angular angular6+ angular7 angular-paging ng-paging ng-paging-notek"
 }
