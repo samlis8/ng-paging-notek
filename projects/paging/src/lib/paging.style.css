@@ -1,0 +1,187 @@
+/* notek ui start */
+/* 默认按钮 */
+.notek-btn {
+    color: #fff;
+    border: none;
+    outline: none;
+    line-height: 1;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 8px 14px;
+    border-radius: 2px;
+    transition: all .2s;
+    background-color: #828485;
+    border: 1px solid #828485;
+    backface-visibility: hidden;
+}
+.notek-btn > i {
+    width: 14px;
+}
+.notek-btn:not(.notek-btn-disabled):hover {
+    color: rgba(0, 0, 0, .3)!important;
+}
+.notek-btn:not(.notek-btn-disabled):active {
+    transform: scale(1.1);
+}
+/* 按钮 */
+.notek-btn.notek-btn-primary {
+    border-color: #209cec;
+    background-color: #209cec;
+}
+.notek-btn.notek-btn-success {
+    border-color: #0ec596;
+    background-color: #0ec596;
+}
+.notek-btn.notek-btn-danger {
+    border-color: #dba212;
+    background-color: #dba212;
+}
+.notek-btn.notek-btn-peril {
+    border-color:#f86641;
+    background-color: #f86641;
+}
+.notek-btn.notek-btn-tradition {
+    color: #797979;
+    border-color: #939393;
+    background-color: transparent;
+}
+.notek-btn.notek-btn-disabled {
+    color: #b9b9b9;
+    cursor: not-allowed;
+    background-color: #fafafa;
+    border-color: #c7c7c7;
+}
+/* 按钮尺寸及风格 */
+.notek-btn.notek-btn-slim {
+    font-weight: 300;
+}
+.notek-btn.notek-btn-big {
+    padding: 12px 18px;
+    font-size: 1.125rem;
+}
+.notek-btn.notek-btn-sm {
+    padding: 6px 8px;
+    font-size: .875rem;
+}
+
+/* 输入框/选择框 */
+.notek-ipt {
+    font-size: 1rem;
+    border-radius: 2px;
+    transition: all .3s;
+    box-sizing: border-box;
+    width: calc(100% - 2px);
+    border: 1px solid #cecece;
+}
+.notek-ipt.error {
+    border-color: #f86641;
+}
+.notek-ipt {
+    margin: 0;
+    padding: 0;
+    height: 32px;
+    outline: none;
+    display: block;
+    line-height: 32px;
+    text-indent: 1rem;
+}
+/* notek ui end */
+
+.paging {
+    user-select: none;
+    text-align: center;
+    position: relative;
+}
+.paging >ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.paging >ul li {
+    color: #fff;
+    font-size: 14px;
+    margin-left: 4px;
+    display: inline-block;
+}
+.paging >ul li.page-item,
+.paging >ul li.not-active {
+    padding: 3px 12px;
+    border-radius: 2px;
+}
+.paging >ul li.page-item {
+    cursor: pointer;
+    transition: all .2s;
+}
+.paging >ul li.page-item:not(.not-active):hover {
+    color: rgba(0, 0, 0, .3)!important;
+}
+.paging >ul li.page-item:not(.not-active):active {
+    transform: scale(1.1);
+}
+.paging >ul li.not-active {
+    cursor: text;
+}
+.paging >ul li.disabled {
+    color: #a7a4a4;
+    cursor: not-allowed;
+    pointer-events: none;
+    border-color: #dcdcdc !important;
+    background-color: #efefef !important;
+}
+.paging >ul li.paging-helper {
+    margin-left: 10px;
+}
+.paging >ul li.paging-helper >span,
+.paging >ul li.paging-helper >input {
+    color: #666;
+    font-size: 14px;
+}
+.paging >ul li.paging-helper >input {
+    width: 80px;
+    display: inline-block;
+}
+
+/* themes. */
+/* sky-blue */
+.paging.sky-blue >ul li.page-item,
+.paging.sky-blue >ul li.not-active {
+    background-color: #209cec;
+    border: 1px solid #209cec;
+}
+.paging.sky-blue >ul li.page-item:hover,
+.paging.sky-blue >ul li.active.page-item {
+    border-color: #097bc3;
+    background-color: #097bc3;
+}
+/* light-yellow */
+.paging.light-yellow >ul li.page-item,
+.paging.light-yellow >ul li.not-active {
+    background-color: #dba212;
+    border: 1px solid #dba212;
+}
+.paging.light-yellow >ul li.page-item:hover,
+.paging.light-yellow >ul li.active.page-item {
+    border-color: #b78308;
+    background-color: #b78308;
+}
+/* jade-green */
+.paging.jade-green >ul li.page-item,
+.paging.jade-green >ul li.not-active {
+    background-color: #0ec596;
+    border: 1px solid #0ec596;
+}
+.paging.jade-green >ul li.page-item:hover,
+.paging.jade-green >ul li.active.page-item {
+    border-color: #01966f;
+    background-color: #01966f;
+}
+
+/*.paging-mask {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+}*/

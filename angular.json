@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "paging": {
+      "root": "projects/paging",
+      "sourceRoot": "projects/paging/src",
+      "projectType": "library",
+      "prefix": "notek",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/paging/tsconfig.lib.json",
+            "project": "projects/paging/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/paging/src/test.ts",
+            "tsConfig": "projects/paging/tsconfig.spec.json",
+            "karmaConfig": "projects/paging/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/paging/tsconfig.lib.json",
+              "projects/paging/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-paging-notek"

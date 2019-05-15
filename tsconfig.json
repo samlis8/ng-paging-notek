@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "paging": [
+        "dist/paging"
+      ],
+      "paging/*": [
+        "dist/paging/*"
+      ]
+    }
   }
 }
