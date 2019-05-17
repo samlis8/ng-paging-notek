@@ -36,11 +36,6 @@ export class YourComponent {
 
 ##### 参数列表
 ```
-**类型**
-混合类型: dialog.create(params)
-提示类型: dialog.alert('标题', params)
-用户交互类型: dialog.prompt('标题', params)
-
 **参数**
 theme: string --> 皮肤，可选项：sky-blue(默认)、light-yellow、jade-green
 pageLimit: number --> 分页大小
