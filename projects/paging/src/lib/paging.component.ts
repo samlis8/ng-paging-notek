@@ -139,6 +139,7 @@ export class PagingComponent implements OnChanges {
 
     /** 初始化 **/
     private initPageParams() {
+        this.emptyList = [];
         // 如果页码小于等于10则全部显示.
         if(this.pageNum <= this.abbrSymbolSize) {
             for(let i=0; i<this.pageNum; i++) this.emptyList.push(i + 1);

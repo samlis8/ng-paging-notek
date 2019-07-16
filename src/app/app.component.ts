@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'ng-paging-notek';
-    total: number = 121;
+    total: number = 1210;
 
     clickPage(page: number) {
         console.log(page);
