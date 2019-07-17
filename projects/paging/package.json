@@ -1,6 +1,6 @@
 {
     "name": "ng-paging-notek",
-    "version": "0.0.32",
+    "version": "0.0.33",
     "description": "angular6+ 分页组件 分页",
     "main": "index.js",
     "scripts": {

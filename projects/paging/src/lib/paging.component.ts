@@ -34,7 +34,7 @@ export class PagingComponent implements OnChanges {
 
     pageNum: number = 0;
     emptyList: any[] = [];
-    abbrSymbolSize: number = 10;
+    abbrSymbolSize: number = 7;
 
     quickJumpPage: string = '';
     quickJumpNumIsCorrect: boolean = true;
@@ -56,13 +56,12 @@ export class PagingComponent implements OnChanges {
 
     /** 转换页码 **/
     private gotoPage() {
-        this.emptyList = [];
+        // this.emptyList = [];
         this.pageNum = Math.ceil(this.pageTotal / this.pageLimit);
         if(this.pageNum - this.currentPage > 3) {
             if(this.currentPage >= 5 && this.pageNum > this.abbrSymbolSize) {
                 this.emptyList = [1, 'place', this.currentPage - 2, this.currentPage - 1, this.currentPage, this.currentPage + 1, this.currentPage + 2, 'place', this.pageNum];
             }else {
-                // (this.emptyList.indexOf('place') > -1 || this.isInit) && this.initPageParams();
                 this.initPageParams();
             }
         }else {
@@ -139,9 +138,9 @@ export class PagingComponent implements OnChanges {
 
     /** 初始化 **/
     private initPageParams() {
-        this.emptyList = [];
         // 如果页码小于等于10则全部显示.
         if(this.pageNum <= this.abbrSymbolSize) {
+            this.emptyList = [];
             for(let i=0; i<this.pageNum; i++) this.emptyList.push(i + 1);
         }
 

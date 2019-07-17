@@ -3,16 +3,16 @@
         <li class="page-item" (click)="firstPage()" [ngClass]="{disabled: currentPage <= 1}" *ngIf="pageNum > 1 && isDisplayFirstBtn">{{firstText}}</li>
         <li class="page-item" (click)="prevPage()" [ngClass]="{disabled: currentPage <= 1}" *ngIf="pageNum > 1">{{prevText}}</li>
         <ng-container *ngFor="let e of emptyList">
-            <li class="page-item" *ngIf="e !== 'place'" (click)="clickPage(e)" [ngClass]="{active: currentPage === e}">{{e}}</li>    
-            <li *ngIf="e === 'place'" class="not-active">{{ellipseText}}</li>    
+            <li class="page-item" *ngIf="e !== 'place'" (click)="clickPage(e)" [ngClass]="{active: currentPage === e}">{{e}}</li>
+            <li *ngIf="e === 'place'" class="not-active">{{ellipseText}}</li>
         </ng-container>
         <li class="page-item" (click)="nextPage()" [ngClass]="{disabled: currentPage === pageNum}" *ngIf="pageNum > 1">{{nextText}}</li>
         <li class="page-item" (click)="lastPage()" [ngClass]="{disabled: currentPage === pageNum}" *ngIf="pageNum > 1 && isDisplayLastBtn">{{lastText}}</li>
-        <li class="paging-helper" *ngIf="pageNum > 5 && isDisplayHelper">
+        <li class="paging-helper" *ngIf="pageNum > abbrSymbolSize && isDisplayHelper">
             <span>共{{pageNum}}页，跳转到第&nbsp;</span>
             <input type="text" class="notek-ipt" [ngClass]="{'error': !quickJumpNumIsCorrect}" [(ngModel)]="quickJumpPage" (keyup)="filterQuickPage()">
-            <span>&nbsp;页</span>
+            <span>&nbsp;页&nbsp;</span>
             <button type="button" class="notek-btn notek-btn-sm" [ngClass]="{'notek-btn-primary': theme === 'sky-blue', 'notek-btn-danger': theme === 'light-yellow', 'notek-btn-success': theme === 'jade-green'}" (click)="quickJump()">确定</button>
         </li>
-    </ul>    
+    </ul>
 </div>
