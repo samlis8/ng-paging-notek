@@ -1,13 +1,13 @@
-<div class="paging" [ngClass]="{'sky-blue': theme === 'sky-blue', 'light-yellow': theme === 'light-yellow', 'jade-green': theme === 'jade-green'}">
+<div class="paging" *ngIf="pageNum > 1" [ngClass]="{'sky-blue': theme === 'sky-blue', 'light-yellow': theme === 'light-yellow', 'jade-green': theme === 'jade-green'}">
     <ul>
-        <li class="page-item" (click)="firstPage()" [ngClass]="{disabled: currentPage <= 1}" *ngIf="pageNum > 1 && isDisplayFirstBtn">{{firstText}}</li>
-        <li class="page-item" (click)="prevPage()" [ngClass]="{disabled: currentPage <= 1}" *ngIf="pageNum > 1">{{prevText}}</li>
+        <li class="page-item" (click)="firstPage()" [ngClass]="{disabled: currentPage <= 1}" *ngIf="isDisplayFirstBtn">{{firstText}}</li>
+        <li class="page-item" (click)="prevPage()" [ngClass]="{disabled: currentPage <= 1}">{{prevText}}</li>
         <ng-container *ngFor="let e of emptyList">
             <li class="page-item" *ngIf="e !== 'place'" (click)="clickPage(e)" [ngClass]="{active: currentPage === e}">{{e}}</li>
             <li *ngIf="e === 'place'" class="not-active">{{ellipseText}}</li>
         </ng-container>
-        <li class="page-item" (click)="nextPage()" [ngClass]="{disabled: currentPage === pageNum}" *ngIf="pageNum > 1">{{nextText}}</li>
-        <li class="page-item" (click)="lastPage()" [ngClass]="{disabled: currentPage === pageNum}" *ngIf="pageNum > 1 && isDisplayLastBtn">{{lastText}}</li>
+        <li class="page-item" (click)="nextPage()" [ngClass]="{disabled: currentPage === pageNum}">{{nextText}}</li>
+        <li class="page-item" (click)="lastPage()" [ngClass]="{disabled: currentPage === pageNum}" *ngIf="isDisplayLastBtn">{{lastText}}</li>
         <li class="paging-helper" *ngIf="pageNum > abbrSymbolSize && isDisplayHelper">
             <span>共{{pageNum}}页，跳转到第&nbsp;</span>
             <input type="text" class="notek-ipt" [ngClass]="{'error': !quickJumpNumIsCorrect}" [(ngModel)]="quickJumpPage" (keyup)="filterQuickPage()">
